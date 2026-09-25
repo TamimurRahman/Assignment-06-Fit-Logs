@@ -9,6 +9,7 @@ const TodaysPlanButton = ({ exercise }: { exercise: ExerciseType }) => {
   const handleTodayPlan = () => {
     console.log("read book button trigger", exercise);
     setTodayPlan([...todayPlan, exercise]);
+      alert(`Todays plan"${exercise.name}"`)
   };
   return (
     <button
