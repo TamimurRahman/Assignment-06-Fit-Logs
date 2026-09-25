@@ -10,8 +10,8 @@ const Library = async() => {
     const ExerciseData = await getExercises();
  
   return (
-    
-      <section className='container mx-auto'>
+    <div className='bg-[#090A0D]'>
+      <section className='container mx-auto '>
         <div>
           <h2>THE LIBRARY</h2>
           <p>Twelve lifts covering every major muscle group.</p>
@@ -23,6 +23,8 @@ const Library = async() => {
           ))}
         </div>
       </section>
+    </div>
+
    
   );
 };
