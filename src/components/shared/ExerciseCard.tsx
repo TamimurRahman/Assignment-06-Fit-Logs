@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExerciseType } from '../types/LibraryTypes';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface IExerciseCardProps{
   exercise:ExerciseType;
@@ -65,6 +66,7 @@ const ExerciseCard = ({exercise}:IExerciseCardProps) => {
         </div>
 
       </div>
+      <Link href={`/card-details/${exercise.id}`}><button className='btn'>Details</button></Link>
     </div>
   );
 };
