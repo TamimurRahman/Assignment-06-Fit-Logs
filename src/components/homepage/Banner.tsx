@@ -13,7 +13,7 @@ const Banner = () => {
           </h1>
           <p className="">
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
-            into today's plan, and watch the week's work add up.
+            into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
           <button className="bg-[#C2F800] hover:bg-blue-700 text-black w-55 font-bold py-2 px-4 rounded">
             BROWSE WORKOUTS

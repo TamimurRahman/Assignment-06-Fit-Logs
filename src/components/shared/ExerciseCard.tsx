@@ -3,7 +3,7 @@ import { ExerciseType } from '../types/LibraryTypes';
 import Image from 'next/image';
 
 interface IExerciseCardProps{
-  Exercise:ExerciseType;
+  exercise:ExerciseType;
 }
 
 const ExerciseCard = ({exercise}:IExerciseCardProps) => {
@@ -11,9 +11,11 @@ const ExerciseCard = ({exercise}:IExerciseCardProps) => {
     <div className="w-full max-w-sm overflow-hidden rounded-xl border border-[#f4f800] bg-[#15171d] text-white ">
 
       {/* Image */}
-      <img
+      <Image
         src={exercise.image}
         alt={exercise.name}
+        width={740}
+        height={740}
         className="h-48 w-full object-cover"
       />
 
