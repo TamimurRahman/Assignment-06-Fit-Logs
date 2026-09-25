@@ -1,3 +1,4 @@
+import TodaysPlanButton from "@/components/exerciseDetails/TodaysPlanButton";
 import { ExerciseType } from "@/components/types/LibraryTypes";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -140,10 +141,8 @@ const page = async ({ params }: ExerciseDetailsPageProps) => {
 
           {/* ================= BUTTONS ================= */}
           <div className="mt-6 flex flex-wrap gap-3">
-            <button className="rounded-lg bg-lime-400 px-5 py-3 text-sm font-semibold text-black hover:bg-lime-300">
-              Add to today&apos;s plan
-            </button>
 
+<TodaysPlanButton exercise={exercise}></TodaysPlanButton>
             <button className="rounded-lg border border-gray-700 px-5 py-3 text-sm text-white hover:bg-gray-800">
               Save for later
             </button>
