@@ -5,10 +5,11 @@ import Image from "next/image";
 import { useContext, useState } from "react";
 import { ExerciseContext } from "../context/ExerciseContext";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const Page = () => {
-  const { todayPlan,  setTodayPlan} = useContext(ExerciseContext);
-const {savePlan, setSavePlan} = useContext(ExerciseContext);
+  const { todayPlan, setTodayPlan } = useContext(ExerciseContext);
+  const { savePlan, setSavePlan } = useContext(ExerciseContext);
   // Active tab
   const [tab, setTab] = useState<"today" | "saved">("today");
 
@@ -41,6 +42,15 @@ const {savePlan, setSavePlan} = useContext(ExerciseContext);
     toast.success("Workout marked as done!");
   };
 
+  const removeExercise = (id: number) => {
+    if (tab === "today") {
+      setTodayPlan((prev) => prev.filter((exercise) => exercise.id !== id));
+    } else {
+      setSavePlan((prev) => prev.filter((exercise) => exercise.id !== id));
+    }
+
+    toast.success("Exercise removed!");
+  };
   // Sort both plans
   const sortedTodayPlan = sortPlans(todayPlan ?? []);
   const sortedSavePlan = sortPlans(savePlan ?? []);
@@ -198,27 +208,35 @@ const {savePlan, setSavePlan} = useContext(ExerciseContext);
                 </div>
 
                 {/* View Details */}
-                <button className="rounded-full border border-gray-700 px-4 py-2 text-[10px] text-gray-300 transition hover:border-gray-500 hover:text-white">
-                  View Details
-                </button>
+
+                <Link href={`/card-details/${exercise.id}`}>
+                  {" "}
+                  <button className="rounded-full border border-gray-700 px-4 py-2 text-[10px] text-gray-300 transition hover:border-gray-500 hover:text-white">
+                    {" "}
+                    View Details{" "}
+                  </button>
+                </Link>
 
                 {/* Mark Done */}
-{tab === "today" && (
-  <button
-    onClick={() => markAsDone(exercise.id)}
-    disabled={exercise.completed}
-    className={`rounded-full px-4 py-2 text-[10px] font-semibold ${
-      exercise.completed
-        ? "cursor-default bg-gray-700 text-gray-300"
-        : "bg-lime-400 text-black hover:bg-lime-300"
-    }`}
-  >
-    {exercise.completed ? "✓ Completed" : "✓ Mark as Done"}
-  </button>
-)}
+                {tab === "today" && (
+                  <button
+                    onClick={() => markAsDone(exercise.id)}
+                    disabled={exercise.completed}
+                    className={`rounded-full px-4 py-2 text-[10px] font-semibold ${
+                      exercise.completed
+                        ? "cursor-default bg-gray-700 text-gray-300"
+                        : "bg-lime-400 text-black hover:bg-lime-300"
+                    }`}
+                  >
+                    {exercise.completed ? "✓ Completed" : "✓ Mark as Done"}
+                  </button>
+                )}
 
                 {/* Remove */}
-                <button className="px-2 text-gray-500 transition hover:text-white">
+                <button
+                  onClick={() => removeExercise(exercise.id)}
+                  className="px-2 text-gray-500 transition hover:text-white"
+                >
                   ×
                 </button>
               </div>
