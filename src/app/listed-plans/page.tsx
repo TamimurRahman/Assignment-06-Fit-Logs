@@ -3,17 +3,13 @@
 import { ExerciseType } from "@/components/types/LibraryTypes";
 import Image from "next/image";
 import { useContext, useState } from "react";
-import { ExerciseContext } from "@/app/context/ExerciseContext";                          
+import { ExerciseContext } from "@/app/context/ExerciseContext";
 import { toast } from "react-toastify";
 import Link from "next/link";
 
 const Page = () => {
-const {
-  todayPlan,
-  setTodayPlan,
-  savePlan,
-  setSavePlan,
-} = useContext(ExerciseContext);
+  const { todayPlan, setTodayPlan, savePlan, setSavePlan } =
+    useContext(ExerciseContext);
   // Active tab
   const [tab, setTab] = useState<"today" | "saved">("today");
 
