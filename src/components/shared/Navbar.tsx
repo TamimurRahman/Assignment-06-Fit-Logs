@@ -9,7 +9,7 @@ const Navbar = () => {
   const { todayPlan, savePlan } = useContext(ExerciseContext);
 
   return (
-    <div className="border-b border-gray-800 bg-[#0b0d0f]">
+    <div className="border-b sticky border-gray-800 bg-[#0b0d0f]">
       <nav className=" container mx-auto navbar sticky top-0 z-50 min-h-14  px-5 text-white">
         {/* ================= MOBILE MENU ================= */}
         <div className="navbar-start">
