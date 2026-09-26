@@ -1,11 +1,11 @@
 "use client";
 
-import React, {
+import {
   createContext,
-  useState,
-  ReactNode,
   Dispatch,
+  ReactNode,
   SetStateAction,
+  useState,
 } from "react";
 
 import { ExerciseType } from "@/components/types/LibraryTypes";
@@ -28,15 +28,15 @@ const ExerciseProvider = ({ children }: { children: ReactNode }) => {
   const [todayPlan, setTodayPlan] = useState<ExerciseType[]>([]);
   const [savePlan, setSavePlan] = useState<ExerciseType[]>([]);
 
-  const sharedData = {
-    todayPlan,
-    setTodayPlan,
-    savePlan,
-    setSavePlan,
-  };
-
   return (
-    <ExerciseContext.Provider value={sharedData}>
+    <ExerciseContext.Provider
+      value={{
+        todayPlan,
+        setTodayPlan,
+        savePlan,
+        setSavePlan,
+      }}
+    >
       {children}
     </ExerciseContext.Provider>
   );
