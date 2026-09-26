@@ -33,8 +33,8 @@ const Page = () => {
     return sortedPlans;
   };
   const markAsDone = (id: number) => {
-    setTodayPlan((prev) =>
-      prev.map((exercise) =>
+    setTodayPlan((prev:ExerciseType[]) =>
+      prev.map((exercise:ExerciseType) =>
         exercise.id === id ? { ...exercise, completed: true } : exercise,
       ),
     );
@@ -42,15 +42,19 @@ const Page = () => {
     toast.success("Workout marked as done!");
   };
 
-  const removeExercise = (id: number) => {
-    if (tab === "today") {
-      setTodayPlan((prev) => prev.filter((exercise) => exercise.id !== id));
-    } else {
-      setSavePlan((prev) => prev.filter((exercise) => exercise.id !== id));
-    }
+const removeExercise = (id: number) => {
+  if (tab === "today") {
+    setTodayPlan((prev: ExerciseType[]) =>
+      prev.filter((exercise: ExerciseType) => exercise.id !== id),
+    );
+  } else {
+    setSavePlan((prev: ExerciseType[]) =>
+      prev.filter((exercise: ExerciseType) => exercise.id !== id),
+    );
+  }
 
-    toast.success("Exercise removed!");
-  };
+  toast.success("Exercise removed!");
+};
   // Sort both plans
   const sortedTodayPlan = sortPlans(todayPlan ?? []);
   const sortedSavePlan = sortPlans(savePlan ?? []);
