@@ -3,13 +3,17 @@
 import { ExerciseType } from "@/components/types/LibraryTypes";
 import Image from "next/image";
 import { useContext, useState } from "react";
-import { ExerciseContext } from "../context/ExerciseContext";
+import { ExerciseContext } from "@/app/context/ExerciseContext";                          
 import { toast } from "react-toastify";
 import Link from "next/link";
 
 const Page = () => {
-  const { todayPlan, setTodayPlan } = useContext(ExerciseContext);
-  const { savePlan, setSavePlan } = useContext(ExerciseContext);
+const {
+  todayPlan,
+  setTodayPlan,
+  savePlan,
+  setSavePlan,
+} = useContext(ExerciseContext);
   // Active tab
   const [tab, setTab] = useState<"today" | "saved">("today");
 
@@ -162,7 +166,7 @@ const Page = () => {
 
         <div className="mt-5 space-y-3">
           {sortedExercises.length > 0 ? (
-            sortedExercises.map((exercise: ExerciseType) => (
+            sortedExercises.map((exercise) => (
               <div
                 key={exercise.id}
                 className="flex items-center gap-3 rounded-xl border border-gray-800 bg-[#111419] p-3"
