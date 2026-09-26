@@ -243,10 +243,25 @@ const Page = () => {
             ))
           ) : (
             /* Empty State */
-            <div className="rounded-xl border border-gray-800 bg-[#111419] py-10 text-center text-sm text-gray-500">
-              {tab === "today"
-                ? "No exercises in today's plan"
-                : "No saved exercises"}
+            <div className="flex min-h-[285px] items-center justify-center rounded-xl border border-dashed border-gray-800 bg-[#0d0f13]">
+              <div className="text-center">
+                <h2 className="text-xl font-bold text-white">
+                  NOTHING HERE YET
+                </h2>
+
+                <p className="mt-2 text-sm text-gray-500">
+                  {tab === "today"
+                    ? "Browse the library and add a lift to get today moving."
+                    : "Save exercises from the library to see them here."}
+                </p>
+
+                <Link
+                  href="/"
+                  className="mt-5 inline-block rounded-full bg-lime-400 px-6 py-2.5 text-xs font-bold text-black transition hover:bg-lime-300"
+                >
+                  Go to workouts
+                </Link>
+              </div>
             </div>
           )}
         </div>
