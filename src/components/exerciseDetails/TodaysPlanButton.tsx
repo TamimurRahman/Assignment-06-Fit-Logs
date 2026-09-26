@@ -1,23 +1,39 @@
 "use client";
+
+import { ExerciseType } from "@/components/types/LibraryTypes";
+import { useContext } from "react";
 import { ExerciseContext } from "@/app/context/ExerciseContext";
-import React, { useContext } from "react";
-import { ExerciseType } from "../types/LibraryTypes";
 import { toast } from "react-toastify";
 
-const TodaysPlanButton = ({ exercise }: { exercise: ExerciseType }) => {
+interface TodaysPlanButtonProps {
+  exercise: ExerciseType;
+}
+
+const TodaysPlanButton = ({ exercise }: TodaysPlanButtonProps) => {
   const { todayPlan, setTodayPlan } = useContext(ExerciseContext);
-  //  console.log(booksProvider,"  booksProvider");
-  const handleTodayPlan = () => {
-    console.log("read book button trigger", exercise);
+
+  const handleAddToTodayPlan = () => {
+    // Check duplicate
+    const alreadyExists = todayPlan.some(
+      (item:ExerciseType) => item.id === exercise.id
+    );
+
+    if (alreadyExists) {
+       toast.warning(`Already add to today's plan `);
+      return;
+    }
+
+    // Add exercise
     setTodayPlan([...todayPlan, exercise]);
-      toast.success(`Add to today's plan`)
+     toast.success(`Add to today's plan `);
   };
+
   return (
     <button
-      className="rounded-lg bg-lime-400 px-5 py-3 text-sm font-semibold text-black hover:bg-lime-300"
-      onClick={() => handleTodayPlan()}
+      onClick={handleAddToTodayPlan}
+      className="rounded-full bg-lime-400 px-5 py-2 text-sm font-semibold text-black hover:bg-lime-300"
     >
-      Add to today&apos;s plan
+      Add to Today&apos;s Plan
     </button>
   );
 };

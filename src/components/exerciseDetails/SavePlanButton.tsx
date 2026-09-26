@@ -1,23 +1,39 @@
 "use client";
+
+import { ExerciseType } from "@/components/types/LibraryTypes";
+import { useContext } from "react";
 import { ExerciseContext } from "@/app/context/ExerciseContext";
-import React, { useContext } from "react";
-import { ExerciseType } from "../types/LibraryTypes";
 import { toast } from "react-toastify";
 
-const SavePlanButton = ({ exercise }: { exercise: ExerciseType }) => {
+interface SavePlanButtonProps {
+  exercise: ExerciseType;
+}
+
+const SavePlanButton = ({ exercise }: SavePlanButtonProps) => {
   const { savePlan, setSavePlan } = useContext(ExerciseContext);
-  //  console.log(booksProvider,"  booksProvider");
+
   const handleSavePlan = () => {
-    console.log("read book button trigger", exercise);
+    // Check duplicate
+    const alreadyExists = savePlan.some(
+      (item:ExerciseType) => item.id === exercise.id
+    );
+
+    if (alreadyExists) {
+       toast.warning(`Already added Save for later`)
+      return;
+    }
+
+    // Add exercise
     setSavePlan([...savePlan, exercise]);
-      toast.success(`Save for later `)
+     toast.success(`Save for later`)
   };
+
   return (
     <button
-      className="rounded-lg border border-gray-700 px-5 py-3 text-sm text-white hover:bg-gray-800"
-      onClick={() => handleSavePlan()}
+      onClick={handleSavePlan}
+      className="rounded-full border border-gray-700 px-5 py-2 text-sm text-white hover:border-lime-400 hover:text-lime-400"
     >
-      Save for later
+      Save Exercise
     </button>
   );
 };
