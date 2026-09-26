@@ -2,6 +2,7 @@
 import { ExerciseContext } from "@/app/context/ExerciseContext";
 import React, { useContext } from "react";
 import { ExerciseType } from "../types/LibraryTypes";
+import { toast } from "react-toastify";
 
 const SavePlanButton = ({ exercise }: { exercise: ExerciseType }) => {
   const { savePlan, setSavePlan } = useContext(ExerciseContext);
@@ -9,7 +10,7 @@ const SavePlanButton = ({ exercise }: { exercise: ExerciseType }) => {
   const handleSavePlan = () => {
     console.log("read book button trigger", exercise);
     setSavePlan([...savePlan, exercise]);
-      alert(`Save Plan"${exercise.name}"`)
+      toast.success(`Save for later `)
   };
   return (
     <button

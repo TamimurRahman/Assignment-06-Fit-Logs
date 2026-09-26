@@ -2,6 +2,7 @@
 import { ExerciseContext } from "@/app/context/ExerciseContext";
 import React, { useContext } from "react";
 import { ExerciseType } from "../types/LibraryTypes";
+import { toast } from "react-toastify";
 
 const TodaysPlanButton = ({ exercise }: { exercise: ExerciseType }) => {
   const { todayPlan, setTodayPlan } = useContext(ExerciseContext);
@@ -9,7 +10,7 @@ const TodaysPlanButton = ({ exercise }: { exercise: ExerciseType }) => {
   const handleTodayPlan = () => {
     console.log("read book button trigger", exercise);
     setTodayPlan([...todayPlan, exercise]);
-      alert(`Todays plan"${exercise.name}"`)
+      toast.success(`Add to today's plan`)
   };
   return (
     <button
