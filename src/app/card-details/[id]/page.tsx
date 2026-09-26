@@ -9,10 +9,11 @@ interface ExerciseDetailsPageProps {
 }
 
 const getExercise = async () => {
-  const response = await fetch("https://api.abcz.workers.dev/api/fitlog"); //localhost na dile error dehabe data load korte pare nah in next.js server component e rander hosse
+  const response = await fetch("https://api.api-store.workers.dev/api/fitlog"); //localhost na dile error dehabe data load korte pare nah in next.js server component e rander hosse
   const data = await response.json();
   return data;
 };
+
 const page = async ({ params }: ExerciseDetailsPageProps) => {
   const { id } = await params;
   console.log("id ", id);
