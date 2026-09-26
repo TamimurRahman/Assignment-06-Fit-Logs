@@ -7,10 +7,26 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
-export const ExerciseContext = createContext({});
+
+import { ExerciseType } from "@/components/types/LibraryTypes";
+
+interface ExerciseContextType {
+  todayPlan: ExerciseType[];
+  setTodayPlan: Dispatch<SetStateAction<ExerciseType[]>>;
+  savePlan: ExerciseType[];
+  setSavePlan: Dispatch<SetStateAction<ExerciseType[]>>;
+}
+
+export const ExerciseContext = createContext<ExerciseContextType>({
+  todayPlan: [],
+  setTodayPlan: () => {},
+  savePlan: [],
+  setSavePlan: () => {},
+});
+
 const ExerciseProvider = ({ children }: { children: ReactNode }) => {
-  const [todayPlan, setTodayPlan] = useState([]);
-  const [savePlan, setSavePlan] = useState([]);
+  const [todayPlan, setTodayPlan] = useState<ExerciseType[]>([]);
+  const [savePlan, setSavePlan] = useState<ExerciseType[]>([]);
 
   const sharedData = {
     todayPlan,
@@ -18,6 +34,7 @@ const ExerciseProvider = ({ children }: { children: ReactNode }) => {
     savePlan,
     setSavePlan,
   };
+
   return (
     <ExerciseContext.Provider value={sharedData}>
       {children}
