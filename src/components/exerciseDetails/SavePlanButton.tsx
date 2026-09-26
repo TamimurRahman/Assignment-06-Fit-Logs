@@ -19,7 +19,7 @@ const SavePlanButton = ({ exercise }: SavePlanButtonProps) => {
     );
 
     if (alreadyExists) {
-       toast.warning(`Already added Save for later`)
+       toast.warning(`Already saved plan`)
       return;
     }
 

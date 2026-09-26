@@ -19,7 +19,7 @@ const TodaysPlanButton = ({ exercise }: TodaysPlanButtonProps) => {
     );
 
     if (alreadyExists) {
-       toast.warning(`Already add to today's plan `);
+       toast.warning(`Already in your plan `);
       return;
     }
 

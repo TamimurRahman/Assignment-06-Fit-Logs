@@ -12,4 +12,5 @@ export interface ExerciseType  {
   rating: number;
   description: string;
   instructions: string[];
+  completed?: boolean;
 };
