@@ -26,7 +26,7 @@ const page = async ({ params }: ExerciseDetailsPageProps) => {
     notFound(); //when user find differen id number this is an error handeling when book is not exists
   }
   return (
-    <div className="container mx-auto px-4 py-5">
+    <div className="container mx-auto px-8 py-10">
       {/* Main Card */}
       <div className="grid gap-8    shadow-lg md:grid-cols-2 ">
         {/* ================= IMAGE ================= */}

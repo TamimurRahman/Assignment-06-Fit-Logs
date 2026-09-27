@@ -70,7 +70,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-
         <div className="navbar-center hidden sm:flex">
           <div className="flex items-center gap-1">
             <Link
@@ -102,7 +101,6 @@ const Navbar = () => {
             </span>
           </Link>
 
-      
           <Link
             href="/listed-plans"
             className="flex items-center gap-1 text-[15px] text-gray-400 hover:text-white"

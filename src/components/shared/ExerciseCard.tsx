@@ -2,7 +2,9 @@ import React from 'react';
 import { ExerciseType } from '../types/LibraryTypes';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import time from '@/assets/vc1.png'
+import kcal from '@/assets/Vector (2).png'
+import rating from '@/assets/Vector (3).png'
 interface IExerciseCardProps{
   exercise:ExerciseType;
 }
@@ -53,17 +55,17 @@ const ExerciseCard = ({exercise}:IExerciseCardProps) => {
     <div className="my-4 border-t border-gray-800"></div>
 
     {/* Exercise Information */}
-    <div className="flex items-center justify-between text-xs text-gray-400">
-      <span>
-        ◷ {exercise.duration} min
+    <div className="flex items-center gap-5 text-xs text-gray-400">
+      <span className='flex gap-2 text-[14px]'>
+       <Image src={time} alt='time'></Image> {exercise.duration} min
       </span>
 
-      <span>
-        ♥ {exercise.caloriesBurned} kcal
+      <span className='flex gap-2 text-[14px]'>
+        <Image src={kcal} alt='time'></Image> {exercise.caloriesBurned} kcal
       </span>
 
-      <span>
-        ★ {exercise.rating}
+      <span className='flex gap-2 text-[14px]'>
+        <Image src={rating} alt='time'></Image> {exercise.rating}
       </span>
     </div>
 

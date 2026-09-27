@@ -4,7 +4,7 @@ import footer_logo from "@/assets/SVG.png";
 
 const Footer = () => {
   return (
-    <footer className="mt-20 border-t border-gray-800 bg-[#0b0d0f]">
+    <footer className="mt-10 border-t border-gray-800 bg-[#0b0d0f]">
       <section className="container mx-auto flex flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
         {/* Logo */}
         <div className="flex items-center gap-2">

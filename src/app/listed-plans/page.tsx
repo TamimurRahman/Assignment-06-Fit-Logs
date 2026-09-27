@@ -79,8 +79,8 @@ const removeExercise = (id: number) => {
   );
 
   return (
-    <main className="min-h-screen bg-[#0d0f12] px-5 py-8 text-white">
-      <div className="mx-auto max-w-5xl">
+    <main className="container mx-auto  min-h-screen  px-10  py-8 text-white">
+      <div className="">
         {/* ================= TITLE ================= */}
 
         <h1 className="text-2xl font-bold">MY PLAN</h1>
