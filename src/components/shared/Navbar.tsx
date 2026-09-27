@@ -9,9 +9,9 @@ const Navbar = () => {
   const { todayPlan, savePlan } = useContext(ExerciseContext);
 
   return (
-    <div className="border-b sticky border-gray-800 bg-[#0b0d0f]">
-      <nav className=" container mx-auto navbar sticky top-0 z-50 min-h-14  px-5 text-white">
-        {/* ================= MOBILE MENU ================= */}
+    <div className="sticky top-0 z-50 border-b  border-gray-800 bg-[#0b0d0f] ">
+      <nav className=" container mx-auto navbar  top-0 z-50 min-h-14  px-5 text-white">
+        {/* ================= MOBILE view================= */}
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -35,7 +35,7 @@ const Navbar = () => {
               </svg>
             </div>
 
-            {/* Mobile Dropdown */}
+            {/* Dropdown */}
             <ul
               tabIndex={-1}
               className="menu menu-sm dropdown-content z-50 mt-3 w-44 rounded-lg border border-gray-800 bg-[#111419] p-2 shadow-xl"
@@ -66,51 +66,50 @@ const Navbar = () => {
               <Image src={logo} alt=""></Image>
             </span>
 
-            <span className="text-sm font-bold tracking-wide">FITLOG</span>
+            <span className="text-[18px] font-bold tracking-wide">FITLOG</span>
           </Link>
         </div>
 
-        {/* ================= DESKTOP NAV ================= */}
+
         <div className="navbar-center hidden sm:flex">
           <div className="flex items-center gap-1">
             <Link
               href="/"
-              className="rounded-full px-4 py-1.5 text-[12px] font-semibold text-gray-500 transition hover:bg-[#1A2312] hover:text-lime-500 "
+              className="rounded-full px-4 py-1.5 text-[15px] font-semibold text-gray-500 transition hover:bg-[#1A2312] hover:text-lime-500 "
             >
               Workouts
             </Link>
 
             <Link
               href="/listed-plans"
-              className="rounded-full px-4 py-1.5 text-[12px] font-semibold text-gray-500 transition hover:bg-[#1A2312] hover:text-lime-500 "
+              className="rounded-full px-4 py-1.5 text-[15px] font-semibold text-gray-500 transition hover:bg-[#1A2312] hover:text-lime-500 "
             >
               My Plan
             </Link>
           </div>
         </div>
 
-        {/* ================= RIGHT ================= */}
         <div className="navbar-end gap-3">
           {/* Plan */}
           <Link
             href="/listed-plans"
-            className="flex items-center gap-1 text-[12px] text-gray-400 hover:text-white"
+            className="flex items-center gap-1 text-[15px] text-gray-400 hover:text-white"
           >
             <span>Plan</span>
 
-            <span className="badge badge-sm border-0 bg-lime-400 text-[10px] font-bold text-black">
+            <span className="badge badge-sm border-0 bg-lime-400 text-[12px] font-bold text-black">
               {todayPlan?.length ?? 0}
             </span>
           </Link>
 
-          {/* Saved */}
+      
           <Link
             href="/listed-plans"
-            className="flex items-center gap-1 text-[12px] text-gray-400 hover:text-white"
+            className="flex items-center gap-1 text-[15px] text-gray-400 hover:text-white"
           >
             <span>Saved</span>
 
-            <span className="badge badge-sm border border-gray-700 bg-transparent text-[10px] text-gray-400">
+            <span className="badge badge-sm border border-gray-700 bg-transparent text-[12px] text-gray-400">
               {savePlan?.length ?? 0}
             </span>
           </Link>
