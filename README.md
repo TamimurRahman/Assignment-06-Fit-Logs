@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FitLog
 
-## Getting Started
+**Website:** [FitLog Live](https://assignment-06-fit-logs.vercel.app/)
 
-First, run the development server:
+## C2. Answers
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Project Name
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Fit Log**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Short Description
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+FitLog is a modern fitness workout management web application built with **Next.js, React, TypeScript, Tailwind CSS, and DaisyUI**. Users can browse exercises, view exercise details, add exercises to **Today's Plan** and **Saved Plan**, mark workouts as completed, and manage their workout plans. Users can also sort plans based on rating, duration, and time. The dashboard displays an empty state when no plans are available.
 
-## Learn More
+### 3. Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* DaisyUI
+* React Toastify
+* Context API
+* Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. 5 Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Sort and filter workout plans** in ascending order based on rating, duration, and time.
+2. **Toast notifications** for different user actions.
+3. **Responsive design** for mobile, laptop, and large displays.
+4. **Manage Today's Workout Plans** from the My Plan dashboard.
+5. **Save exercises for later** and manage saved and today's plans. The dashboard also shows total workout time, calories burned, and the total number of exercises.
 
-## Deploy on Vercel
+### 5. Live Website
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://assignment-06-fit-logs.vercel.app/
